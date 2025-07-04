@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+:root {
+  --primary-bg-color: #337ab7;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.side-bar-logo {
+  font-family: "Kaushan Script", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  background-color: #7f7f19;
+  padding: 16px;
+  transition: "ease-in-out 0.5s";
+}
+
+.ant-layout-sider {
+  min-width: 235px;
+}
+
+/* :where(.css-dev-only-do-not-override-zl9ks2).ant-menu-dark {
+  background-color: #f4f4f4 !important;
+} */
+
+.dashboard-card-text {
+  text-align: center;
+  font-size: 20px;
+  padding: 2px 0;
+}
+
+.dashboard-card-body {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-card-body p {
+  font-size: 30px;
+}
+
+/* .ant-table-thead {
+  background: var(--primary-bg-color) !important;
+} */
+.dashboard-table .ant-table-thead {
+  background: var(--primary-bg-color) !important;
+}
+
+.dashboard-table
+  :where(.css-dev-only-do-not-override-zl9ks2).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th {
+  background: var(--primary-bg-color) !important;
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-card .ant-card-body {
+  padding: 14px !important;
+  border-radius: 0 0 8px 8px;
+}
+
+.invoice
+  :where(.css-dev-only-do-not-override-zl9ks2).ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th {
+  background: black !important;
+  color: white;
+}
+
+@media print {
+  /* @page {
+    size: A4 landscape;
+  } */
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice
+    :where(.css-dev-only-do-not-override-zl9ks2).ant-table-wrapper
+    .ant-table-thead
+    > tr
+    > th {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+.changeFont {
+  font-family: "Hind Siliguri", sans-serif !important;
+  size: 12px;
+}
+
+.invoiceBillingTable .invoiceBillingTd > td {
+  padding: 4px !important;
+  border-bottom: 1px solid lightgray;
+  font-size: 12px !important;
+}
+
+.invoiceBillingTable .ant-table-thead {
+  padding: 5px 7px !important;
+  font-size: 12px !important;
+  border-bottom: 1px solid lightgray;
+}
+
+.invoiceBillingTable .ant-table-cell {
+  padding: 2px 7px !important;
+  font-size: 12px !important;
+  border-bottom: 1px solid lightgray;
+}
+
+.dashboard-box-shape {
+  border-radius: 5px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.dashboard-card-bg {
+  color: #fff;
+  background-color: var(--primary-bg-color);
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+:where(.css-dev-only-do-not-override-zl9ks2).ant-card .ant-card-head-title {
+  display: inline-block;
+  flex: none !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* -------- table row bg color-------- */
+.custom-row-theme-default {
+  background-color: #ffffff;
+  /* Light grey for default theme */
+}
+
+.custom-row-theme-other {
+  background-color: #f1f8ff;
+  /* Light blue for other themes */
+}
+
+/* -------table heading size when print data its uses subscription report------------ */
+.custom-tables .ant-table-thead > tr > th {
+  font-size: 10px;
+  /* Set the desired font size */
+  font-weight: normal;
+  /* Optional: adjust font weight */
+}
+
+.custom-tables .ant-table-tbody > tr > td {
+  font-size: 10px;
+  /* Set the desired font size for table body cells */
+  line-height: 1.5;
+  /* Optional: adjust line height for better readability */
+}
