@@ -88,16 +88,16 @@ const Accountlist = () => {
     <>
       <Card>
         <div
-          className={
-            themeGlobal.theme === theme.defaultAlgorithm
-              ? "custom-header"
-              : "header-dark"
-          }
-          style={{
-            backgroundColor: "#C3E6CB",
-            padding: "10px 4px 4px  4px",
-            borderRadius: "10px 10px 0px 0px",
-          }}
+          // className={
+          //   themeGlobal.theme === theme.defaultAlgorithm
+          //     ? "custom-header"
+          //     : "header-dark"
+          // }
+          // style={{
+          //   backgroundColor: "#C3E6CB",
+          //   padding: "10px 4px 4px  4px",
+          //   borderRadius: "10px 10px 0px 0px",
+          // }}
         >
           <Row
             style={{
@@ -108,11 +108,11 @@ const Accountlist = () => {
             <Typography.Title level={5} style={{ margin: 0 }}>
               {`Account List (${data?.total || 0})`}
             </Typography.Title>
-            {accountSub?.permissions.write && (
+            
               <Col xs={12} sm={6} md={8} lg={4} xl={4} xxl={2}>
                 <CreateButton name="Add New" onClick={showModal} />
               </Col>
-            )}
+            
           </Row>
           <Row
             gutter={[5, 5]}
@@ -136,9 +136,9 @@ const Accountlist = () => {
         </div>
 
         <div
-          className={
-            themeGlobal.theme === theme.defaultAlgorithm ? "custom-table" : ""
-          }
+          // className={
+          //   themeGlobal.theme === theme.defaultAlgorithm ? "custom-table" : ""
+          // }
           style={{ marginTop: "25px" }}
         >
           <Table
@@ -148,7 +148,7 @@ const Accountlist = () => {
             dataSource={data?.data?.length ? data?.data : []}
             columns={AccountListColumn()}
             scroll={{ x: true }}
-            loading={isLoading || isFetching}
+            // loading={isLoading || isFetching}
             pagination={{
               ...generatePagination(
                 Number(data?.total),

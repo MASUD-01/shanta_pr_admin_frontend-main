@@ -10,6 +10,7 @@ const RequireUser = ({
   allowedRoles?: string[];
   children: JSX.Element;
 }): any => {
+  
   const location = useLocation();
 
   const { isLoading } = userApi.endpoints.getMe.useQuery(undefined, {

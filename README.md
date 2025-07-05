@@ -1,30 +1,12 @@
-# React + TypeScript + Vite
+1.assing to costsheet others person
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. billing & invoice
+ a.Select biilding .b. select owner  c. specific flat or all flat if select specific add multiple flat select option
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+ 3. Enter and distribute aggregate utility charges at project level to owners’ ledger (its means utility charges is chnages permonth)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+ 4. jodi owner er info deyar somoy tenent er info day tahole ei tenent ei owenr list e show korbe
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+ 5. Per Head And Distribute costing stytem

@@ -29,6 +29,7 @@ import { useAppDispatch } from '../../../app/store/store';
 import { setCommonModal } from '../../../app/slice/modalSlice';
 import CreateEmployee from '../../Configuration/Employee/components/CreateEmployee';
 import { PlusOutlined } from '@ant-design/icons';
+import OwnerMultiSelect from '../../homemake/OwnerMultiSelect';
 
 const CreateMoneyReceipt = () => {
   const [form] = Form.useForm();
@@ -166,7 +167,10 @@ const CreateMoneyReceipt = () => {
             }}
             justify={'center'}
           >
-            <Col xs={24} sm={24} md={8} lg={8}></Col>
+            <Col xs={24} sm={24} md={8} lg={8}>
+            
+            <OwnerMultiSelect/>
+            </Col>
           </Row>
 
           <Row
@@ -483,7 +487,7 @@ const CreateMoneyReceipt = () => {
               </Form.Item>
             </Col>
           </Row>
-          <Row
+          {/* <Row
             style={{
               width: '100%',
             }}
@@ -538,7 +542,7 @@ const CreateMoneyReceipt = () => {
                 />
               </Form.Item>
             </Col>
-          </Row>
+          </Row> */}
           <Row
             style={{
               width: '100%',

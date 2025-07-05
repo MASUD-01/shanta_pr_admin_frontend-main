@@ -1,27 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
-import { Select, Form, Input, Space, FormItemProps, SelectProps } from 'antd';
+import { Select, Form, Input, Space } from 'antd';
+import { FaPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
-import { setCommonModal } from '../../../../app/slice/modalSlice';
-import SubmitButton from '../../../../common/submitButton/SubmitButton';
+import { setCommonModal } from '../../app/slice/modalSlice';
+import SubmitButton from '../../common/submitButton/SubmitButton';
+
 
 const { Option } = Select;
 
-
-type IProps={
-  formItemProps?: FormItemProps
-  selectFieldProps?:SelectProps
-}
-const SelectCostingName = ({
-  formItemProps,
-  selectFieldProps
- 
-}:IProps) => {
+const SelectFlatField = ({
+  name,
+}: {
+  name: string | (number | string)[];
+}) => {
   const [form] = Form.useForm();
   const [items, setItems] = useState([
-    'Utility Costs',
-    'Monthly Operating Costs',
-    "Billable Charges ",
+    'Flat A',
+    'Flat B',
   ]);
   const [selected, setSelected] = useState(null);
   const dispatch = useDispatch();
@@ -55,9 +51,10 @@ const SelectCostingName = ({
   return (
     <>
       <Form.Item
+        name={name}
         label={
           <Space>
-            <span>Select Costing Name</span>
+            <span>Select Flat</span>
             {/* <SubmitButton
               icon={<FaPlus size={13} />}
               label='Add Project'
@@ -67,32 +64,35 @@ const SelectCostingName = ({
           </Space>
         }
         required
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-
-        {...formItemProps}
+        // rules={[
+        //   {
+        //     required: true,
+        //     message: 'Field is required',
+        //   },
+        // ]}
       >
         <Select
-
           style={{ width: '100%' }}
-         
+          placeholder='Select a project'
           value={selected}
           onChange={(value) => setSelected(value)}
 
-          {...selectFieldProps}
-        >
-          {items.map((item) => (
-            <Option key={item} value={item}>
-              {item}
-            </Option>
-          ))}
-        </Select>
+          options={[
+            {
+            label:'Flat A',
+            value:'A'
+          },  {
+            label:'Flat B',
+            value:'B'
+          }
+        
+        ]}
+        />
+       
+        
       </Form.Item>
     </>
   );
 };
 
-export default SelectCostingName;
+export default SelectFlatField;

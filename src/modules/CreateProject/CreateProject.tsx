@@ -1,13 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
-import { Select, Form, Input, Space } from 'antd';
+import { Select, Form, Input, Space, FormItemProps, SelectProps } from 'antd';
 import SubmitButton from '../../common/submitButton/SubmitButton';
-import { FaPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { setCommonModal } from '../../app/slice/modalSlice';
 const { Option } = Select;
 
-const CreateProject = () => {
+
+type IProps={
+label?:string
+formItemProps?:FormItemProps
+  selectFieldProps?: SelectProps;
+}
+const CreateProject = ({label,formItemProps,selectFieldProps}:IProps) => {
   const [form] = Form.useForm();
   const [items, setItems] = useState(['Building A', 'Building B']);
   const [selected, setSelected] = useState(null);
@@ -42,16 +47,17 @@ const CreateProject = () => {
   return (
     <>
       <Form.Item
+     
         name={'building_name'}
         label={
           <Space>
-            <span>Select Building</span>
-            <SubmitButton
+            <span> {label||'Select Building'} </span>
+            {/* <SubmitButton
               icon={<FaPlus size={13} />}
               label='Add Building'
               size='small'
               onClick={showModal}
-            />
+            /> */}
           </Space>
         }
         rules={[
@@ -59,12 +65,16 @@ const CreateProject = () => {
             required: true,
           },
         ]}
+
+        {...formItemProps}
       >
         <Select
           style={{ width: '100%' }}
-          placeholder='Select a project'
+          placeholder={label||'Select '}
           value={selected}
           onChange={(value) => setSelected(value)}
+
+          {...selectFieldProps}
         >
           {items.map((item) => (
             <Option key={item} value={item}>

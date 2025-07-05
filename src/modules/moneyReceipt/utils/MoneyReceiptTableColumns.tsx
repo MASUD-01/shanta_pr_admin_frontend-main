@@ -9,7 +9,7 @@ import { CustomLink } from '../../../common/CustomLink';
 import { useGetMeQuery } from '../../../app/api/userApi/userApi';
 
 export const MoneyReceiptTableColumns =
-  (): TableProps<IMoneyReceipt>['columns'] => {
+  (): TableProps<any>['columns'] => {
     const { data: profile } = useGetMeQuery();
     const profileInfo = profile?.data?.permissions?.modules;
 
@@ -46,19 +46,11 @@ export const MoneyReceiptTableColumns =
       },
 
       {
-        title: 'Client Name',
+        title: 'Owner Name',
         dataIndex: 'client_name',
         key: 'client_name',
         width: 250,
-        render: (_, record) => {
-          return (
-            record?.client_name && (
-              <Link to={`/client/list/${record?.client_id}`}>
-                {record?.client_name} [{record.client_no}]
-              </Link>
-            )
-          );
-        },
+    
       },
       {
         title: 'Account Name',
@@ -73,20 +65,9 @@ export const MoneyReceiptTableColumns =
         key: 'payment_method',
       },
       {
-        title: 'Collected By',
-        dataIndex: 'collected_by',
-        key: 'collected_by',
-      },
-      {
         title: 'Paid Amount',
         dataIndex: 'paid_amount',
         key: 'paid_amount',
-      },
-      {
-        title: 'Discount',
-        dataIndex: 'discount',
-        key: 'discount',
-        render: (discount) => discount || 0.0,
       },
 
       {

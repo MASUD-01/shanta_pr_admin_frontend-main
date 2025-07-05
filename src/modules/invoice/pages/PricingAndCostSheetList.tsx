@@ -85,7 +85,7 @@ const PricingAndCostSheetList = () => {
               : '#121212',
         },
       }}
-      title={`Pricing & Cost sheet list (${data?.total || 0})`}
+      title={`Pricing & Cost sheet list`}
       extra={
         <Form form={form}>
           <Row
@@ -105,19 +105,7 @@ const PricingAndCostSheetList = () => {
                 }}
               />
             </Col>
-            {/* <CommonClientSelect
-              margin={'0px'}
-              name={'client_id'}
-              md={8}
-              lg={8}
-              onSelect={(e: any) =>
-                setFilterItem((prevState) => ({
-                  ...prevState,
-                  client_id: e,
-                }))
-              }
-            /> */}
-
+  
             <Col xs={24} sm={12} md={9} lg={13}>
               <DatePicker.RangePicker
                 defaultValue={[
@@ -164,7 +152,7 @@ const PricingAndCostSheetList = () => {
                 },
               ]
         }
-        loading={isLoading || isFetching}
+        // loading={isLoading || isFetching}
         pagination={{
           ...generatePagination(Number(data?.total), setPagination, pagination),
           current: Number(page),

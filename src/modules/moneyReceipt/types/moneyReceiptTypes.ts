@@ -2,6 +2,7 @@ export interface IMoneyReceipt {
   id: number;
   payment_date: string;
   client_name: string;
+   account_name: string;
   money_receipt_no: string;
   payment_method: string;
   paid_amount: string;

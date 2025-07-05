@@ -28,15 +28,16 @@ export const InvoiceHeader = ({
         <Col style={{ display: 'flex', alignItems: 'center', maxWidth: '30%' }}>
           <img
             src={
-              ProfileInfo?.company_logo
-                ? imageURL + ProfileInfo?.company_logo
-                : logo
+              ""
+              // ProfileInfo?.company_logo
+              //   ? imageURL + ProfileInfo?.company_logo
+              //   : logo
             }
             width={150}
             height={100}
             style={{ objectFit: 'contain' }}
 
-            // style={GetInfo().logoProp}
+           
           />
         </Col>
 
@@ -67,7 +68,7 @@ export const InvoiceHeader = ({
               level={4}
               style={{ fontFamily: 'serif', color: 'black' }}
             >
-              {ProfileInfo?.company_name || ''}
+              { 'Property Management'}
             </Typography.Title>
             {/* {orgInfo?.org_address1 ? (
               <Typography.Text
@@ -109,7 +110,7 @@ export const InvoiceHeader = ({
                 color: 'black',
               }}
             >
-              <strong>Mobile:</strong> {ProfileInfo?.company_phone}
+              <strong>Mobile:</strong> {'01953096115'}
             </Typography.Text>
             <Typography.Text
               style={{
@@ -119,7 +120,7 @@ export const InvoiceHeader = ({
                 color: 'black',
               }}
             >
-              <strong>Email:</strong> {ProfileInfo?.company_email}
+              <strong>Email:</strong> {'masud.m360ict@gmail.com'}
             </Typography.Text>{' '}
             <Typography.Text
               style={{
@@ -129,7 +130,7 @@ export const InvoiceHeader = ({
                 color: 'black',
               }}
             >
-              <strong>Address:</strong> {ProfileInfo?.company_address}
+              <strong>Address:</strong> {'Banani, Dhaka'}
             </Typography.Text>
             {created_by && (
               <Typography.Text

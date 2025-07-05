@@ -11,7 +11,7 @@ export const CreateButton = ({
 }) => {
   return (
     <Button
-      style={{ background: '#00b4e9' }}
+      // style={{ background: '#00b4e9' }}
       onClick={onClick}
       type='primary'
       icon={<PlusOutlined />}
