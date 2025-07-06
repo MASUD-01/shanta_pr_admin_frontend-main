@@ -36,6 +36,8 @@ import Accountlist from "./modules/accounts/pages/Accountlist";
 import CollectionReport from "./modules/reports/pages/CollectionReport";
 import BankReconciliation from "./modules/BankReconciliation/pages/BankReconciliation";
 import VendorPayment from "./modules/expenseAndvendorPayment/pages/VendorPayment";
+import PurchaseAndPettyCash from "./modules/PurchaseAndPettyCash/pages/PurchaseAndPettyCash";
+import PurchasePettyComponent from "./modules/PurchaseAndPettyCash/components/PurchasePettyComponent";
 const Routers = () => {
 	const router = createBrowserRouter([
 		{ path: "*", element: <NotFound /> },
@@ -153,6 +155,20 @@ const Routers = () => {
 						{
 							path: "payment",
 							element: <VendorPayment />,
+						},
+					],
+				},
+
+					{
+					path: "/purchase-pettycash",
+					children: [
+						{
+							path: "create",
+							element: < PurchasePettyComponent/>,
+						},
+							{
+							path: "list",
+							element: <PurchaseAndPettyCash />,
 						},
 					],
 				},

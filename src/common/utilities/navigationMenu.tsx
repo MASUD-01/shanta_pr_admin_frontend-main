@@ -10,6 +10,10 @@ import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { FaFileInvoice } from "react-icons/fa6";
 import { FaCircleDollarToSlot } from "react-icons/fa6";
 import { TbReportAnalytics } from "react-icons/tb";
+import { GiBank } from "react-icons/gi";
+import { GiExpense } from "react-icons/gi";
+import { SiSalesforce } from "react-icons/si";
+import { RiUserReceived2Line, RiUserShared2Line } from "react-icons/ri";
 export type NavigationItem = {
 	key: string;
 	label: string;
@@ -28,6 +32,40 @@ export const navigationMenu: any = [
 				style={{ color: "rgb(8 8 6)", width: "20px", height: "20px" }}
 			/>
 		),
+	},
+	{
+		key: "crm",
+		label: "CRM",
+		icon: <FaFileInvoice />,
+		children: [
+			{
+				label: <Link to={`/crm/sales-plan`}>Sales Plan</Link>,
+				key: `/crm/sales-plan`,
+				icon: <SiSalesforce size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: <Link to={`/crm/create-lead`}>Create lead</Link>,
+				key: `/crm/create-lead`,
+				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: (
+					<Link to={`/crm/my-created-lead-lists`}>My Created Lead-List</Link>
+				),
+				key: `/crm/my-created-lead-lists`,
+				icon: <CiMenuBurger size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: <Link to={`/crm/received-lead`}>Received Lead</Link>,
+				key: `/crm/received-lead`,
+				icon: <RiUserReceived2Line size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: <Link to={`/crm/transfer-lead`}>Transfer Lead</Link>,
+				key: `/crm/transfer-lead`,
+				icon: <RiUserShared2Line size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+		],
 	},
 	{
 		key: "pricing",
@@ -120,7 +158,7 @@ export const navigationMenu: any = [
 	{
 		key: "bank-reconciliation",
 		label: "Bank Reconciliation & Payment",
-		icon: <FaCircleDollarToSlot />,
+		icon: <GiBank />,
 		children: [
 			{
 				label: <Link to="/bank-reconciliation/list">Bank Reconciliation</Link>,
@@ -132,11 +170,63 @@ export const navigationMenu: any = [
 	{
 		key: "expense-vendor",
 		label: "Expense & Vendor Payment",
-		icon: <FaCircleDollarToSlot />,
+		icon: <GiExpense />,
 		children: [
 			{
 				label: <Link to="/expense-vendor/payment">Vendor Payment</Link>,
 				key: "/expense-vendor/payment",
+				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: <Link to="/expense-vendor/list">Vendor Payment List</Link>,
+				key: "/expense-vendor/list",
+				icon: <CiMenuBurger size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+			{
+				label: (
+					<Link to="/expense-vendor/tax">
+						Vendor Payment Tax Reconciliation
+					</Link>
+				),
+				key: "/expense-vendor/tax",
+				icon: <CiMenuBurger size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+		],
+	},
+	{
+		key: "budget-performance",
+		label: "Budget Performance Monitoring",
+		icon: <GiExpense />,
+		children: [
+			{
+				label: (
+					<Link to="/budget-performance/create">
+						Budget Performance Monitoring
+					</Link>
+				),
+				key: "/budget-performance/create",
+				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+		],
+	},
+	{
+		key: "purchase-pettycash",
+		label: "Purchase Order/Petty Cash",
+		icon: <GiExpense />,
+		children: [
+			{
+				label: (
+					<Link to="/purchase-pettycash/create">Create Purchase Order/Petty Cash</Link>
+				),
+				key: "/purchase-pettycash/create",
+				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
+			},
+
+			{
+				label: (
+					<Link to="/purchase-pettycash/list">Purchase Order/Petty Cash List</Link>
+				),
+				key: "/purchase-pettycash/list",
 				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
 			},
 		],
@@ -148,7 +238,9 @@ export const navigationMenu: any = [
 		children: [
 			{
 				label: (
-					<Link to={`/project-management/create-project`}>Create Project</Link>
+					<Link to={`/project-management/create-project`}>
+						Create Project/Building
+					</Link>
 				),
 				key: `/project-management/create-project`,
 				icon: <GoPlus size={18} style={{ color: "rgb(8 8 6)" }} />,
