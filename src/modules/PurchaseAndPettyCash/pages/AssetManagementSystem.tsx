@@ -393,7 +393,7 @@ const AssetManagementSystem: React.FC = () => {
             name="value"
             label="Value"
           >
-            <Input prefix="$" placeholder="Estimated value" />
+            <Input  placeholder="Estimated value" />
           </Form.Item>
 
           <Form.Item
